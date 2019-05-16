@@ -1,1 +1,1 @@
-web: gunicorn -w 3 -k eventlet projectwolf:app
+web: gunicorn -w 3 -k eventlet projectwoof:app
