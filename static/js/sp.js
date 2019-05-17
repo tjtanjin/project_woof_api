@@ -17,7 +17,7 @@ $(document).ready(function() {
 
     $.ajax({
       // put your api endpoint here
-      url: 'http://0.0.0.0:5000/api/v1/predict/',
+      url: './api/v1/predict/',
       type: "POST",
       data: JSON.stringify(data),
       dataType: "json",
