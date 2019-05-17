@@ -12,7 +12,7 @@ def predict_breed(image_url):
 	img = image_processor(image_url)
 
 	#load model
-	model = load_model("./models/model.hdf5")
+	model = load_model("./models/model_1.hdf5")
 
 	class_number = model.predict_classes(img)
 	breed = map_to_class(class_number)
