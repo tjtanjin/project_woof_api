@@ -29,7 +29,7 @@ class Prediction(Resource):
         #	return {"success:": "False", "popularity": "NAN"}
         #else:
         #	return {"success": "True", "popularity": popularity}
-        return {"breed": "Hihi"}
+        return {"breed": breed}
 
 class haha(Resource):
     def get(self):

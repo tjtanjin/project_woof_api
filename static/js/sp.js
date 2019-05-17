@@ -1,32 +1,16 @@
 $(document).ready(function() {
   console.log('ready');
-
-  // Collapse Navbar
-  var navbarCollapse = function() {
-    if ($("#mainNav").offset().top > 400) {
-      $("#mainNav").addClass("navbar-shrink");
-    } else {
-      $("#mainNav").removeClass("navbar-shrink");
-    }
-  };
-  // Collapse now if page is not at top
-  navbarCollapse();
-  // Collapse the navbar when page is scrolled
-  $(window).scroll(navbarCollapse);
-
   // Handle upload event
-  $(document).ready(function()
-  {
-   $("#drop-area").on('dragenter', function (e){
+  $("#drop-area").on('dragenter', function (e){
     e.preventDefault();
     $(this).css('background', '#BBD5B8');
-   });
+  });
 
-   $("#drop-area").on('dragover', function (e){
+  $("#drop-area").on('dragover', function (e){
     e.preventDefault();
-   });
+  });
 
-   $("#drop-area").on('drop', function (e){
+  $("#drop-area").on('drop', function (e){
     e.preventDefault();
     var url = e.originalEvent.dataTransfer.getData('text/html').match(/src\s*=\s*"(.+?)"/)[1];
     const data = {img_src: url};
@@ -41,23 +25,15 @@ $(document).ready(function() {
       // function callback after success ajax request
       success: function(data) {
         console.log(data)
-        document.getElementById("drop-area").innerHTML = "yay";
+        document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
       },
       error: function(error) {
         console.log('Error ${error}')
       },
     });
-    
     return false;
-   });
   });
 
-  document.getElementById('text_box').addEventListener('keypress', function(event) {
-    if (event.keyCode == 13) {
-      event.preventDefault();
-      document.getElementById("main_button").click();
-    }
-  });
   $('#nav_title').click(function(evt) {
       evt.preventDefault();
     $('html, body').animate({
@@ -94,4 +70,7 @@ $(document).ready(function() {
       scrollTop: ($('#team').offset().top)
     },700);
   });
+
 });
+
+

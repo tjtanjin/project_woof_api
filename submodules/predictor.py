@@ -8,26 +8,18 @@ from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 
 def predict_breed(image_url):
-	"""
-	Function that makes predictions for all categories.
-	Args:
-		model: model to be used for prediction
-		df: dataframe to be used in this prediction
-		shift: number to shift by to rectify category numbers
-	"""
-	image = image_processor(image_url)
+
+	img = image_processor(image_url)
 
 	#load model
 	model = load_model("./models/model.hdf5")
 
-	breed = model.predict_classes(image)
+	class_number = model.predict_classes(img)
+	breed = map_to_class(class_number)
 
 	print(breed)
 
-	return(breed)
-
-	#arrange data and itemid
-	#data = {'id':test_df['id'].tolist(), 'breed':np.argmax(predictions, axis=1)}
+	return breed
 
 def image_processor(image_url):
     # download image
@@ -35,7 +27,7 @@ def image_processor(image_url):
     r = requests.get(image_url, stream=True)
     img = Image.open(r.raw)
     print(img)
-    #img.thumbnail((400,400))
+
     img = ImageOps.fit(img, (400, 400), Image.ANTIALIAS)
     # convert to numpy array
     img = img_to_array(img)
@@ -43,3 +35,15 @@ def image_processor(image_url):
     img = np.expand_dims(img, axis=0)
     print(img.shape)
     return img
+
+def map_to_class(class_number):
+
+	with open("./data/mapping.json", "r") as file:
+		file = json.load(file)
+
+	for key, value in file.items():
+		if value == str(class_number.flat[0]):
+			breed = key
+			break
+
+	return breed

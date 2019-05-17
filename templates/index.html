@@ -1,443 +1,266 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="
-  sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="./static/js/sp.js"></script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Project Billboard</title>
+  <title>Project Woof!</title>
   <link rel="icon" href="./static/favicon.ico" />
+
+  <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="
+  sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./static/js/sp.js"></script>
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!-- Custom fonts for this template -->
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="./static/css/sp.min.css" rel="stylesheet">
+
 </head>
+
 <body>
+
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color:rgb(0,0,0,0.8);">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" id="nav_title" href="#" style="color:#EE82EE;">Project Billboard</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Project Woof</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav text-uppercase ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" id="nav_home" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="nav_models" href="#models">Models</a>
-          </li>
+        <ul class="navbar-nav ml-auto my-2 my-lg-0">
           <li class="nav-item">
             <a class="nav-link" id="nav_about" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="nav_timeline" href="#timeline">Timeline</a>
+            <a class="nav-link" id="nav_gallery" href="#gallery">Gallery</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="nav_team" href="#team">Team</a>
+            <a class="nav-link" href="#portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/tjtanjin/project_billboard_model/" target="_blank">Github</a>
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Header -->
-  <header class="masthead" style="background-image:url(http://oi63.tinypic.com/wb8odi.jpg); background-size: cover; margin:0;">
-    <div class="container">
-      <div class="intro-text">
-        <div class="intro-heading text-uppercase">Song Popularity Predictor</div>
-        <div class="container col-md-6">
-          <div class="row">
-            <div class="input-group input-group-sm mb-3">
-              <div class="input-group-prepend">
-              </div>
-            <textarea class="form-control rounded-3" id="text_box" placeholder="Enter Song Name & Choose Model ->" style="height:30px;"aria-label="Enter Song Name"></textarea>
-            <select id="model_selection">
-              <option value="logistic_regression">Logistic Regression</option>
-              <option value="knn">K Nearest Neighbors</option>
-              <option value="xgboost" selected="selected">XGBoost</option>
-            </select>
-            </div>
-          </div>
-        <p id="predict_result" style="color:white;"></p>
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center text-center">
+        <div class="col-lg-10 align-self-end">
+          <h1 class="text-uppercase text-white font-weight-bold">Your Favorite Source of Free Bootstrap Themes</h1>
+          <hr class="divider my-4">
         </div>
-        <div id="wrapper">
- <input type="file">
- <div id="drop-area">
-  <h3 class="drop-text">Drag and Drop Images Here</h3>
- </div>
-</div>
+        <div class="col-lg-8 align-self-baseline" style="height:30%;">
+          <h3 class="drop-text">Drag and Drop Images Here</h3>
+          <img id="drop-area" src="./static/img/dog_unhovered.png" style="height:100%; width:40%">
+          <p id="results"></p>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Models -->
-  <section id="models">
+  <!-- About Section -->
+  <section class="page-section bg-primary" id="about">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Models</h2>
-          <h3 class="section-subheading text-muted">Prediction Model Types</h3>
-        </div>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-4" style="height:405px;">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-chart-bar fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Logistic Regression</h4>
-          <p class="text-muted">Accuracy: 65.2%</p>
-          <button class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#logistic_regression_details">Learn more &raquo;</button>
-        </div>
-        <div class="col-md-4" style="height:405px;">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fab fa-hubspot fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">K Nearest Neighbors</h4>
-          <p class="text-muted">Accuracy: 61.2%</p>
-          <button class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#knn_details">Learn more &raquo;</button>
-        </div>
-        <div class="col-md-4" style="height:405px;">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-rocket fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">XGBoost</h4>
-          <p class="text-muted">Accuracy: 68.7%</p>
-          <button class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#xgboost_details">Learn more &raquo;</button>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="text-white mt-0">We've got what you need!</h2>
+          <hr class="divider light my-4">
+          <p class="text-white-50 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
+          <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="bg-light" id="about">
+  <!-- Services Section -->
+  <section class="page-section" id="services">
     <div class="container">
+      <h2 class="text-center mt-0">At Your Service</h2>
+      <hr class="divider my-4">
       <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">About</h2>
-          <h3 class="section-subheading text-muted">"Music is an undeniable part of our lives"</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 ml-auto">
-          <p class="lead">"Music is an undeniable part of our lives - we listen to music during commute, work, or even to get over a heartbreak. The best ones end up in the Billboard 200 chart, but here's a central question:<br/> <b>Is there a method to this madness that is being a chart-topper?</b>
-          </p>
-        </div>
-        <div class="col-lg-4 mr-auto">
-          <p class="lead">The objective of this project is to build a model that can predict the potential of a song to be a billboard hit based on its features.<br/>This project involves the following:<br/>
-          <b>1. API calling and web scraping - Python3</b><br/>
-          <b>2. Data cleaning - Python</b><br/>
-          <b>3. Data reporting - Jupyter Notebook</b><br/>
-          <b>4. Machine learning - Python</b><br/>
-          </p>
-        </div>
-      </div>
-      <div class="text-center">
-        <a class="btn btn-xl" href="https://github.com/tjtanjin/project_billboard_model" target="_blank">
-          <i class="fab fa-github"></i>
-          Find out more!
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Timeline -->
-  <section id="timeline">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Timeline</h2>
-          <h3 class="section-subheading text-muted">Our Project Journey</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <ul class="timeline">
-            <li>
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="./static/img/1.png" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>2nd April 2019</h4>
-                  <h4 class="subheading">Project commences!</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">The “Project Billboard” team was formed. The task was to deliver a model predicting if a song would be a Billboard hit.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="./static/img/2.png" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>18th April 2019</h4>
-                  <h4 class="subheading">Exploring possibilities</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">We had our first meeting at starbucks where we worked out the scope of the project and the resources to use. Spotify’s API was chosen as our primary source of data for song features.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="./static/img/3.png" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>29th April 2019</h4>
-                  <h4 class="subheading">Song extraction & analysis</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">The code for collecting song features from Spotify was completed and we had our first dataset. We proceeded to try simple algorithms for hit/miss prediction, as well as scraping billboard hot 100 charts for unique hits. 
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="./static/img/4.png" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>6th May 2019</h4>
-                  <h4 class="subheading">Model training & refining</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Machine learning models proved decent, with accuracies of 60-70%. The next step was to explore how we can refine the model and prepare a user-friendly interface.
-                  </p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="./static/img/5.png" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>11th May 2019</h4>
-                  <h4 class="subheading">Project deployed!</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Our models have been deployed on a simple website with a user-friendly interface!
-                  </p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team -->
-  <section class="bg-light" id="team">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Project Team</h2>
-          <h3 class="section-subheading text-muted">Contributors</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="https://media.licdn.com/dms/image/C5103AQHzxSoSpkhQQg/profile-displayphoto-shrink_200_200/0?e=1562803200&v=beta&t=ruVIdg1OVof_d6_P5FUJ6oRWZEs-kbi8SVQXzbyoBmc" alt="">
-            <h4>Tan Jin</h4>
-            <p class="text-muted">The Cool Kid</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/tan-jin-4b5a07184/" target="_blank">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://github.com/tjtanjin/" target="_blank">
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.facebook.com/TJTanJin/" target="_blank">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-            </ul>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+            <h3 class="h4 mb-2">Sturdy Themes</h3>
+            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
           </div>
         </div>
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="https://scontent.fsin8-1.fna.fbcdn.net/v/t31.0-8/13254886_10209056212341918_6229900836130072372_o.jpg?_nc_cat=105&_nc_ht=scontent.fsin8-1.fna&oh=00c1d7ab2189027d58604d6bb495f053&oe=5D71A251" alt="">
-            <h4>Arthur Chionh</h4>
-            <p class="text-muted">The Funny Kid</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/arthur-chionh-7309a5157/" target="_blank">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://github.com/artc95/" target="_blank">
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.facebook.com/arthur95chionh/" target="_blank">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-            </ul>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+            <h3 class="h4 mb-2">Up to Date</h3>
+            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
           </div>
         </div>
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="https://scontent.fsin8-2.fna.fbcdn.net/v/t1.0-9/59697866_864455247236670_473565967390081024_n.jpg?_nc_cat=103&_nc_ht=scontent.fsin8-2.fna&oh=970e73de7628675c3f3f210e635a789e&oe=5D6F4F9B" alt="">
-            <h4>Toh Yue Feng</h4>
-            <p class="text-muted">The Crazy Kid</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="https://github.com/m3thx6" target="_blank">
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.facebook.com/yuefeng.toh.5" target="_blank">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-            </ul>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
+            <h3 class="h4 mb-2">Ready to Publish</h3>
+            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
+            <h3 class="h4 mb-2">Made with Love</h3>
+            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Have an idea for the project? Reach out to any of us!</p>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+            <div class="portfolio-box-caption">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+            <div class="portfolio-box-caption p-3">
+              <div class="project-category text-white-50">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Logistic Regression Details Modal -->
-  <div class="modal fade" id="logistic_regression_details" tabindex="-1" role="dialog" aria-labelledby="Logistic Regression Details" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header" style="background-color:rgb(0,0,0, 0.8);">
-          <h5 class="modal-title" style="color:#EE82EE;">Logistic Regression Model</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#EE82EE; opacity:0.8;">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Logistic Regression is commonly used to solve various classification problems such as spam detection.</p>
-          <p>It is one of the most simple machine learning algorithms for two-class classification. While linear regression gives a continuous output (housing prices), logistic regression provides a discrete output (whether a patient has cancer or not).</p>
-          <p>Aside from its easy implementation, it is also efficient and does not require high computational power. However, logistic regression does not do well with a large number of features and also has a tendency to overfit.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-left:auto; margin-right:auto;">Close</button>
-        </div>
-      </div>
+  <!-- Call to Action Section -->
+  <section class="page-section bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+      <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
     </div>
-  </div>
+  </section>
 
-  <!-- K Nearest Neighbors Details Modal -->
-  <div class="modal fade" id="knn_details" tabindex="-1" role="dialog" aria-labelledby="KNN Details" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header" style="background-color:rgb(0,0,0, 0.8);">
-          <h5 class="modal-title" style="color:#EE82EE;">K Nearest Neighbors Model</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#EE82EE; opacity:0.8;">
-            <span aria-hidden="true">&times;</span>
-          </button>
+  <!-- Contact Section -->
+  <section class="page-section" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Let's Get In Touch!</h2>
+          <hr class="divider my-4">
+          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
         </div>
-        <div class="modal-body">
-          <p>K Nearest Neighbors is a supervised machine learning algorithm that is commonly used to solve classification problems.</p>
-          <p>For this algorithm, a key assumption made is that similar things exist in close proximity. By calculating the distances between various data points, the model will attempt to predict the class of a new data point based on its proximity to other points.</p>
-          <p>The advantage to such an approach is that it is simple to implement with little need for us to tune any parameters. However, the algorithm gets significantly slower with increasing number of features used in the model.</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+          <div>+1 (202) 555-0149</div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-left:auto; margin-right:auto;">Close</button>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+          <!-- Make sure to change the email address in anchor text AND the link below! -->
+          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- XGBoost Details Modal -->
-  <div class="modal fade" id="xgboost_details" tabindex="-1" role="dialog" aria-labelledby="XGBoost Details" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header" style="background-color:rgb(0,0,0, 0.8);">
-          <h5 class="modal-title" style="color:#EE82EE;">XGBoost Model</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#EE82EE; opacity:0.8;">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>XGBoost(eXtreme Gradient Boosting) is a decision-tree-based ensemble machine learning algorithm that uses a gradient boosting framework.</p>
-          <p>Designed for speed and performance, it has become a widely used and really popular tool among Kaggle competitors and Data Scientists in industry. XGBoost uses an ensemble method that seeks to create a strong classifier (model) based on “weak” classifiers. Models are added on top of each other iteratively and the errors of the previous model are then corrected by the next predictor.</p>
-          <p>However, as a tradeoff to its laudable efficiency and performance, it is significantly harder to tune than other models due to the many hyperparameters and is susceptibie to overfitting.</p>
-        </div>
-        <div class="modal-footer text-center">
-          <button type="button" class="btn btn-primary" data-dismiss="modal" style="margin-left:auto; margin-right:auto;">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="bg-light">
-    <div class="container bg-light">
-      <div class="row">
-        <div class="col-md-4">
-          <span class="copyright">Copyright &copy; Project Billboard 2019<br/>Powered by Flask & Gunicorn</span>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline social-buttons">
-            <li class="list-inline-item">
-              <a href="https://github.com/tjtanjin/project_billboard_model/" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline quicklinks">
-            <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+  <footer class="bg-light py-5">
+    <div class="container">
+      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
     </div>
   </footer>
+
+  <!-- Plugin JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+
 </body>
+
 </html>
