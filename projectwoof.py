@@ -27,9 +27,10 @@ class Conversion(Resource):
         #convert image to base64
         img_64 = c.convert_to_64(data["img_src"])
         #send base64 to API server for predicing breed
-        breed = g.send_img(img_64)
+        job_id = g.send_img(img_64)
+        print(job_id)
         #return predicted breed
-        return {"success": "True", "breed": breed}
+        return {"success": "True", "job_id": job_id}
 
 class haha(Resource):
     def get(self):

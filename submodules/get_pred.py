@@ -1,4 +1,6 @@
 import requests
+from redis import Redis
+import rq
 
 def send_img(img_64):
 	"""
@@ -9,8 +11,7 @@ def send_img(img_64):
 	print(type(img_64))
 	res = requests.post(url="https://tjtanjin.pythonanywhere.com/api/v1/predict/", headers={'Content-Type': 'application/json', 'Accept': 'application/json'}, json={"img_64":img_64})
 	try:
-		breed = res.json()["breed"]
-		print(res.json()["breed"])
-		return breed
+		job_id = res.json()["job_id"]
+		return job_id
 	except:
 		return None
