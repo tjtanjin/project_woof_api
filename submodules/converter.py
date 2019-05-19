@@ -6,11 +6,11 @@ import pandas as pd
 import sys, json, base64, requests
 
 def convert_to_64(img_src):
-	"""
-	Function to encode image from image source to base64.
-	Args:
-		img_src: source of the image
-	"""
+    """
+    Function to encode image from image source to base64.
+    Args:
+        img_src: source of the image
+    """
     r = requests.get(img_src, stream=True)
     image = Image.open(r.raw)
     buff = BytesIO()
