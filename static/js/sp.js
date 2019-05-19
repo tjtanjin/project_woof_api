@@ -24,7 +24,36 @@ $(document).ready(function() {
       // function callback after success ajax request
       success: function(data) {
         console.log(data)
-        document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
+        var job_id = data["job_id"]
+        //document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
+        // $(function poll(){
+        //   $.ajax({ 
+        //     url: 'https://tjtanjin.pythonanywhere.com/api/v1/predict/status/'+job_id,
+        //     success: function(data){
+        //       document.getElementById("results").innerHTML = data["status"];
+        //     },
+        //     dataType: "json",
+        //     complete: poll, 
+        //     timeout: 29000 
+        //   });
+        // })();
+        var poller = setInterval(checkJob, 3000);
+        function checkJob() {
+          $.ajax({ 
+            url: 'https://tjtanjin.pythonanywhere.com/api/v1/predict/status/'+job_id,
+            success: function(data){
+              if (data["status"] == "False") {
+                document.getElementById("results").innerHTML = data["status"];
+              } else { 
+                clearInterval(poller);
+                document.getElementById("results").innerHTML = data["status"];
+              }
+            },
+            //dataType: "json",
+            //complete: checkJob, 
+            //timeout: 30000 
+          });
+        }
       },
       error: function(error) {
         console.log('Error ${error}')
