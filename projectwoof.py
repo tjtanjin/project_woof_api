@@ -4,6 +4,7 @@ from flask_jsonpify import jsonify
 from flask_cors import CORS
 import submodules.converter as c
 import submodules.get_pred as g
+import uuid
 
 app = Flask(__name__)
 api = Api(app)
@@ -27,7 +28,8 @@ class Conversion(Resource):
         #convert image to base64
         img_64 = c.convert_to_64(data["img_src"])
         #send base64 to API server for predicing breed
-        job_id = g.send_img(img_64)
+        job_id = str(uuid.uuid1())
+        threading.Thread(target=g.send_img, args=(img_64, job_id)).start()
         print(job_id)
         #return predicted breed
         return {"success": "True", "job_id": job_id}
