@@ -2,7 +2,8 @@ from flask import Flask, request, render_template
 from flask_restful import Api, Resource
 from flask_jsonpify import jsonify
 from flask_cors import CORS
-import submodules.predictor as p
+import submodules.converter as c
+import submodules.get_pred as g
 
 app = Flask(__name__)
 api = Api(app)
@@ -12,24 +13,23 @@ CORS(app)
 def index():
     return render_template('index.html')
 
-class Prediction(Resource):
+class Conversion(Resource):
     def post(self):
         """
-        Handles post request for prediction results.
+        Function that handles request for prediction results.
         Args:
-            songname: name of the song to predict
+            None
+        Data:
+            img_src: image source url provided in json format
         """
-        #determine model chosen by user
+        #retrieve image source url
         data = request.get_json()
-        print(data)
-        breed = p.predict_breed(data["img_src"])
-        #predict popularity based on song name and model
-        #popularity = predict_popularity(songname, model)
-        #if popularity == "Unable to find specified song.":
-        #	return {"success:": "False", "popularity": "NAN"}
-        #else:
-        #	return {"success": "True", "popularity": popularity}
-        return {"breed": breed}
+        #convert image to base64
+        img_64 = c.convert_to_64(data["img_src"])
+        #send base64 to API server for predicing breed
+        breed = g.send_img(img_64)
+        #return predicted breed
+        return {"success": "True", "breed": breed}
 
 class haha(Resource):
     def get(self):
@@ -40,7 +40,7 @@ class haha(Resource):
         """
         return {"hehe":"hoho"}
 
-api.add_resource(Prediction, '/api/v1/predict/')
+api.add_resource(Conversion, '/api/v1/convert/')
 api.add_resource(haha, '/laugh/')
 
 if __name__ == '__main__':

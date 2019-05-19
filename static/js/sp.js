@@ -14,10 +14,9 @@ $(document).ready(function() {
     e.preventDefault();
     var url = e.originalEvent.dataTransfer.getData('text/html').match(/src\s*=\s*"(.+?)"/)[1];
     const data = {img_src: url};
-
     $.ajax({
       // put your api endpoint here
-      url: './api/v1/predict/',
+      url: './api/v1/convert/',
       type: "POST",
       data: JSON.stringify(data),
       dataType: "json",
