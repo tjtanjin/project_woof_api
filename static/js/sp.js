@@ -43,7 +43,7 @@ $(document).ready(function() {
             url: 'https://tjtanjin.pythonanywhere.com/api/v1/predict/status/'+job_id,
             success: function(data){
               if (data["status"] == "False") {
-                document.getElementById("results").innerHTML = data["status"];
+                document.getElementById("results").innerHTML = "Nope";
               } else { 
                 clearInterval(poller);
                 document.getElementById("results").innerHTML = data["status"];
