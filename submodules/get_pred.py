@@ -1,6 +1,4 @@
 import requests
-from redis import Redis
-import rq
 
 def send_img(img_64):
 	"""
