@@ -49,6 +49,10 @@ $(document).ready(function() {
                 document.getElementById("results").innerHTML = data["status"];
               }
             },
+            error: function(error) {
+              console.log('Error ${error}')
+              document.getElementById("results").innerHTML = data["Error"];
+            },
             //dataType: "json",
             //complete: checkJob, 
             //timeout: 30000 
