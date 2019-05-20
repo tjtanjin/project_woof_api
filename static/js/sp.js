@@ -30,6 +30,7 @@ $(document).ready(function() {
   });
   $("#drop-area").on('drop', function (e){
     e.preventDefault();
+    document.getElementById("results").innerHTML = "Predicting...";
     var url = e.originalEvent.dataTransfer.getData('text/html').match(/src\s*=\s*"(.+?)"/)[1];
     const data = {img_src: url};
     $.ajax({
@@ -60,14 +61,16 @@ $(document).ready(function() {
           $.ajax({ 
             url: 'https://tjtanjin.pythonanywhere.com/api/v1/predict/status/'+job_id,
             success: function(data){
+              //works only because there is only one worker on the free server, not to be generalized
+              clearInterval(poller);
               if (data["status"] == "False") {
                 document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 001.";
               } else { 
-                clearInterval(poller);
                 document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
               }
             },
             error: function(error) {
+              clearInterval(poller);
               console.log('Error ${error}')
               document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 002.";
             },
