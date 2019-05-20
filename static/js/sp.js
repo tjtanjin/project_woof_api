@@ -1,16 +1,33 @@
 $(document).ready(function() {
   console.log('ready');
+  // Collapse Navbar
+  var navbarCollapse = function() {
+    if ($("#mainNav").offset().top > 400) {
+      $("#mainNav").addClass("navbar-shrink");
+    } else {
+      $("#mainNav").removeClass("navbar-shrink");
+    }
+  };
+  // Collapse now if page is not at top
+  navbarCollapse();
+  // Collapse the navbar when page is scrolled
+  $(window).scroll(navbarCollapse);
   // Handle upload event
-  $("#mysterious_dog").on('dragenter', function (e){
+  $("#mysterious-dog").on('dragenter', function (e){
     e.preventDefault();
-    document.getElementById("mysterious_dog").src = "./static/img/dog_hovered.png";
+    document.getElementById("mysterious-dog").src = "./static/img/dog_hovered.png";
   });
 
-  $("#mysterious_dog").on('dragleave', function (e){
+  $("#mysterious-dog").on('dragleave', function (e){
     e.preventDefault();
-    document.getElementById("mysterious_dog").src = "./static/img/dog_unhovered.png";
+    document.getElementById("mysterious-dog").src = "./static/img/dog_unhovered.png";
   });
-
+  $("#mysterious-dog").on('dragover', function (e){
+    e.preventDefault();
+  });
+  $("#drop-area").on('dragover', function (e){
+    e.preventDefault();
+  });
   $("#drop-area").on('drop', function (e){
     e.preventDefault();
     var url = e.originalEvent.dataTransfer.getData('text/html').match(/src\s*=\s*"(.+?)"/)[1];
