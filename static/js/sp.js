@@ -51,7 +51,7 @@ $(document).ready(function() {
             },
             error: function(error) {
               console.log('Error ${error}')
-              document.getElementById("results").innerHTML = data["Error"];
+              document.getElementById("results").innerHTML = "Error";
             },
             //dataType: "json",
             //complete: checkJob, 
