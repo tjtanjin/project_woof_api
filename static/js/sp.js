@@ -1,13 +1,14 @@
 $(document).ready(function() {
   console.log('ready');
   // Handle upload event
-  $("#drop-area").on('dragenter', function (e){
+  $("#mysterious_dog").on('dragenter', function (e){
     e.preventDefault();
-    $(this).css('background', '#BBD5B8');
+    document.getElementById("mysterious_dog").src = "./static/img/dog_hovered.png";
   });
 
-  $("#drop-area").on('dragover', function (e){
+  $("#mysterious_dog").on('dragleave', function (e){
     e.preventDefault();
+    document.getElementById("mysterious_dog").src = "./static/img/dog_unhovered.png";
   });
 
   $("#drop-area").on('drop', function (e){
