@@ -44,15 +44,15 @@ $(document).ready(function() {
             url: 'https://tjtanjin.pythonanywhere.com/api/v1/predict/status/'+job_id,
             success: function(data){
               if (data["status"] == "False") {
-                document.getElementById("results").innerHTML = "Nope";
+                document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 001.";
               } else { 
                 clearInterval(poller);
-                document.getElementById("results").innerHTML = data["status"];
+                document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
               }
             },
             error: function(error) {
               console.log('Error ${error}')
-              document.getElementById("results").innerHTML = "Error";
+              document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 002.";
             },
             //dataType: "json",
             //complete: checkJob, 
