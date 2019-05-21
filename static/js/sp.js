@@ -43,7 +43,6 @@ $(document).ready(function() {
       document.getElementById("mysterious-dog").src = "http://i64.tinypic.com/28vc4n4.gif";
       document.getElementById("results").innerHTML = "Predicting...";
       const url = e.originalEvent.dataTransfer.getData('text/html').match(/src\s*=\s*"(.+?)"/)[1];
-      const dropped_img = e.originalEvent.dataTransfer.getData('text/html')
       const data = {img_src: url};
       $.ajax({
         // put your api endpoint here
@@ -75,18 +74,20 @@ $(document).ready(function() {
               success: function(data){
                 //works only because there is only one worker on the free server, not to be generalized
                 clearInterval(poller);
+                document.getElementById("mysterious-dog").src = "./static/img/dog_unhovered.png";
                 document.getElementById("results").value = "idle";
                 if (data["status"] == "False") {
                   document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 001.";
                 } else { 
-                  document.getElementById("mysterious-dog").src = dropped_img;
+                  document.getElementById("mysterious-dog").src = url;
                   document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
                 }
               },
               error: function(error) {
-                clearInterval(poller);
-                document.getElementById("results").value = "idle";
                 console.log('Error ${error}')
+                clearInterval(poller);
+                document.getElementById("mysterious-dog").src = "./static/img/dog_unhovered.png";
+                document.getElementById("results").value = "idle";
                 document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 002.";
               },
               //dataType: "json",
