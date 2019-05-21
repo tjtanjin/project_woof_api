@@ -15,75 +15,93 @@ $(document).ready(function() {
   // Handle upload event
   $("#mysterious-dog").on('dragenter', function (e){
     e.preventDefault();
-    document.getElementById("mysterious-dog").src = "./static/img/dog_hovered.png";
+    if (document.getElementById("results").value != "pred") {
+      document.getElementById("mysterious-dog").src = "./static/img/dog_hovered.png";
+    } else {
+    //nothing
+    }
   });
 
   $("#mysterious-dog").on('dragleave', function (e){
     e.preventDefault();
-    document.getElementById("mysterious-dog").src = "./static/img/dog_unhovered.png";
+    if (document.getElementById("results").value != "pred") {
+      document.getElementById("mysterious-dog").src = "./static/img/dog_unhovered.png";
+    } else {
+    //nothing  
+    }
   });
   $("#mysterious-dog").on('dragover', function (e){
     e.preventDefault();
   });
-  $("#drop-area").on('dragover', function (e){
+  //$("#drop-area").on('dragover', function (e){
+   // e.preventDefault();
+  //});
+  $("#mysterious-dog").on('drop', function (e){
     e.preventDefault();
-  });
-  $("#drop-area").on('drop', function (e){
-    e.preventDefault();
-    document.getElementById("results").innerHTML = "Predicting...";
-    var url = e.originalEvent.dataTransfer.getData('text/html').match(/src\s*=\s*"(.+?)"/)[1];
-    const data = {img_src: url};
-    $.ajax({
-      // put your api endpoint here
-      url: './api/v1/convert/',
-      type: "POST",
-      data: JSON.stringify(data),
-      dataType: "json",
-      contentType: 'application/json',
-      // function callback after success ajax request
-      success: function(data) {
-        console.log(data)
-        var job_id = data["job_id"]
-        //document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
-        // $(function poll(){
-        //   $.ajax({ 
-        //     url: 'https://tjtanjin.pythonanywhere.com/api/v1/predict/status/'+job_id,
-        //     success: function(data){
-        //       document.getElementById("results").innerHTML = data["status"];
-        //     },
-        //     dataType: "json",
-        //     complete: poll, 
-        //     timeout: 29000 
-        //   });
-        // })();
-        var poller = setInterval(checkJob, 3000);
-        function checkJob() {
-          $.ajax({ 
-            url: 'https://tjtanjin.pythonanywhere.com/api/v1/predict/status/'+job_id,
-            success: function(data){
-              //works only because there is only one worker on the free server, not to be generalized
-              clearInterval(poller);
-              if (data["status"] == "False") {
-                document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 001.";
-              } else { 
-                document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
-              }
-            },
-            error: function(error) {
-              clearInterval(poller);
-              console.log('Error ${error}')
-              document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 002.";
-            },
-            //dataType: "json",
-            //complete: checkJob, 
-            //timeout: 30000 
-          });
-        }
-      },
-      error: function(error) {
-        console.log('Error ${error}')
-      },
-    });
+    if (document.getElementById("results").value != "pred") {
+      document.getElementById("results").value = "pred";
+      document.getElementById("mysterious-dog").src = "./static/img/dog_predicting.gif";
+      document.getElementById("results").innerHTML = "Predicting...";
+      const url = e.originalEvent.dataTransfer.getData('text/html').match(/src\s*=\s*"(.+?)"/)[1];
+      const dropped_img = e.originalEvent.dataTransfer.getData('text/html')
+      const data = {img_src: url};
+      $.ajax({
+        // put your api endpoint here
+        url: './api/v1/convert/',
+        type: "POST",
+        data: JSON.stringify(data),
+        dataType: "json",
+        contentType: 'application/json',
+        // function callback after success ajax request
+        success: function(data) {
+          console.log(data)
+          var job_id = data["job_id"]
+          //document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
+          // $(function poll(){
+          //   $.ajax({ 
+          //     url: 'https://tjtanjin.pythonanywhere.com/api/v1/predict/status/'+job_id,
+          //     success: function(data){
+          //       document.getElementById("results").innerHTML = data["status"];
+          //     },
+          //     dataType: "json",
+          //     complete: poll, 
+          //     timeout: 29000 
+          //   });
+          // })();
+          var poller = setInterval(checkJob, 3000);
+          function checkJob() {
+            $.ajax({ 
+              url: 'https://tjtanjin.pythonanywhere.com/api/v1/predict/status/'+job_id,
+              success: function(data){
+                //works only because there is only one worker on the free server, not to be generalized
+                clearInterval(poller);
+                document.getElementById("results").value = "idle";
+                if (data["status"] == "False") {
+                  document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 001.";
+                } else { 
+                  document.getElementById("mysterious-dog").src = dropped_img;
+                  document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
+                }
+              },
+              error: function(error) {
+                clearInterval(poller);
+                document.getElementById("results").value = "idle";
+                console.log('Error ${error}')
+                document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 002.";
+              },
+              //dataType: "json",
+              //complete: checkJob, 
+              //timeout: 30000 
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error ${error}')
+        },
+      });
+    } else {
+      alert("A prediction is already running!");
+    }
     return false;
   });
 
