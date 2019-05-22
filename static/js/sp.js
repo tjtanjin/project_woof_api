@@ -78,6 +78,8 @@ $(document).ready(function() {
                 document.getElementById("results").value = "idle";
                 if (data["status"] == "False") {
                   document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 001.";
+                } else if (data["status"] == "None") {
+                //do nothing
                 } else { 
                   document.getElementById("mysterious-dog").src = url;
                   document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
