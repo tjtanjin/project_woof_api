@@ -33,9 +33,6 @@ $(document).ready(function() {
   $("#mysterious-dog").on('dragover', function (e){
     e.preventDefault();
   });
-  //$("#drop-area").on('dragover', function (e){
-   // e.preventDefault();
-  //});
   $("#mysterious-dog").on('drop', function (e){
     e.preventDefault();
     if (document.getElementById("results").value != "pred") {
