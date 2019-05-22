@@ -37,7 +37,8 @@ $(document).ready(function() {
     e.preventDefault();
     if (document.getElementById("results").value != "pred") {
       document.getElementById("results").value = "pred";
-      document.getElementById("mysterious-dog").src = "http://i64.tinypic.com/28vc4n4.gif";
+      //document.getElementById("mysterious-dog").src = "http://i64.tinypic.com/28vc4n4.gif";
+      document.getElementById("mysterious-dog").src = "http://i63.tinypic.com/4vseg1.jpg";
       document.getElementById("results").innerHTML = "Predicting...";
       const url = e.originalEvent.dataTransfer.getData('text/html').match(/src\s*=\s*"(.+?)"/)[1];
       const data = {img_src: url};
