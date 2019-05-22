@@ -74,9 +74,9 @@ $(document).ready(function() {
               success: function(data){
                 //works only because there is only one worker on the free server, not to be generalized
                 clearInterval(poller);
-                document.getElementById("mysterious-dog").src = "./static/img/dog_unhovered.png";
                 document.getElementById("results").value = "idle";
                 if (data["status"] == "False") {
+                  document.getElementById("mysterious-dog").src = "./static/img/dog_unhovered.png";
                   document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 001.";
                 } else if (data["status"] == "None") {
                 //do nothing
