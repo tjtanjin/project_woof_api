@@ -100,7 +100,6 @@ $(document).ready(function() {
         },
         error: function(error) {
           console.log('Error ${error}')
-          clearInterval(poller);
           document.getElementById("mysterious-dog").src = "./static/img/dog_unhovered.png";
           document.getElementById("results").value = "idle";
           document.getElementById("results").innerHTML = "This prediction only accepts static images. If you are experiencing issues with static images, try dragging them in from a new tab.";
