@@ -32,6 +32,13 @@ $(document).ready(function() {
   });
   $("#mysterious-dog").on('dragover', function (e){
     e.preventDefault();
+    document.getElementById("pred_running").style.display = "block";
+    document.getElementById("pred_running").classList.toggle("fadeIn");
+    document.getElementById("pred_running").classList.toggle("fadeOut");
+    document.getElementById("pred_running").innerHTML = "Your prediction is running. As this project is for learning purposes, it runs on a free server that might take a couple of minutes to generate predictions. Please be patient."
+    setTimeout(function() {
+      $(".alert").alert('close');
+    }, 2000);
   });
   $("#mysterious-dog").on('drop', function (e){
     e.preventDefault();
@@ -75,12 +82,13 @@ $(document).ready(function() {
                 document.getElementById("results").value = "idle";
                 if (data["status"] == "False") {
                   document.getElementById("mysterious-dog").src = "./static/img/dog_unhovered.png";
-                  document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 001.";
+                  document.getElementById("results").innerHTML = "Error Code: 001.";
+                  
                 } else if (data["status"] == "None") {
                 //do nothing
                 } else { 
                   document.getElementById("mysterious-dog").src = url;
-                  document.getElementById("results").innerHTML = "The dog breed is "+data["breed"]+"!";
+                  document.getElementById("results").innerHTML = data["breed"];
                 }
               },
               error: function(error) {
@@ -88,7 +96,7 @@ $(document).ready(function() {
                 clearInterval(poller);
                 document.getElementById("mysterious-dog").src = "./static/img/dog_unhovered.png";
                 document.getElementById("results").value = "idle";
-                document.getElementById("results").innerHTML = "There appears to be an error with the prediction. Please try again. Error Code: 002.";
+                document.getElementById("results").innerHTML = "Error Code: 002.";
               },
               //dataType: "json",
               //complete: checkJob, 
@@ -100,13 +108,19 @@ $(document).ready(function() {
           console.log('Error ${error}')
           document.getElementById("mysterious-dog").src = "./static/img/dog_unhovered.png";
           document.getElementById("results").value = "idle";
-          document.getElementById("results").innerHTML = "This prediction only accepts static images. If you are experiencing issues with static images, try dragging them in from a new tab.";
+          document.getElementById("results").innerHTML = "Invalid input."
+          //This prediction only accepts static images. If you are experiencing issues with static images, try dragging them in from a new tab.";
         },
       });
     } else {
       alert("A prediction is already running!");
     }
     return false;
+  });
+  $("#signboard").hover(function(){
+    document.getElementById("signboard").classList.toggle("paused");
+    }, function(){
+    document.getElementById("signboard").classList.toggle("paused");
   });
 
   $('#nav_title').click(function(evt) {
