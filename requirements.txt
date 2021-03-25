@@ -51,7 +51,7 @@ python-dateutil==2.8.0
 python-http-client==3.1.0
 python-telegram-bot==11.1.0
 pytz==2019.1
-PyYAML==5.1
+PyYAML==5.4
 redis==3.2.1
 regex==2019.4.10
 requests==2.21.0
