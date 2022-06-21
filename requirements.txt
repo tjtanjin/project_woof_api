@@ -34,7 +34,7 @@ Markdown==3.1
 MarkupSafe==1.1.1
 mock==3.0.5
 monotonic==1.5
-numpy==1.16.2
+numpy==1.22.0
 opencv-python==4.1.0.25
 pandas==0.24.2
 paramiko==2.4.2
